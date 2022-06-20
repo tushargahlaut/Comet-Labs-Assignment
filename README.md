@@ -1,5 +1,7 @@
 # Comet-Labs-Assignment
 
+### On your command line, run the command "npm start"
+
 ## User Routes:
 
 /users/signup to register a new user  
