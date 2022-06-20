@@ -2,7 +2,7 @@
 
 ## User Routes:
 
-/users/signup to register a new user
+/users/signup to register a new user  
 /users/login to login an already existing user
 
 ## Problems Routes:
