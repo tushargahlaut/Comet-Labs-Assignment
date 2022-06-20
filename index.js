@@ -18,6 +18,10 @@ app.use("/users", userRouter);
 app.use("/admin",isAdmin,problemRouter);
 
 
+app.get("/",(req,res)=>{
+  res.send("Welcome to my API");
+})
+
 const port = process.env.PORT || 5000;
 
 // connect to MongoDB
