@@ -17,7 +17,7 @@ app.use(cors());
 app.use("/users", userRouter);
 app.use("/admin",isAdmin,problemRouter);
 
-
+//Fix Bug
 app.get("/",(req,res)=>{
   res.send("Welcome to my API");
 })

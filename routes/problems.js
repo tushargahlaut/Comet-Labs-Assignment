@@ -6,7 +6,6 @@ router.post("/addproblems", addProblems);
 router.delete("/deleteproblem/:id",deleteProblems);
 router.put("/updateproblems/:id",updateProblems);
 router.post("addtestcase/:id",addTestCase);
-router.post("/submitsolution",submitSolution);
-router.get("/checksolution",checkSolution);
+router.get("/checksolution/:id",checkSolution);
 
 module.exports= router;

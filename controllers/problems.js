@@ -86,7 +86,7 @@ const addTestCase = async(req,res)=>{
     const { input, output, timeLimit,active,judgeId } = req.body;
     let isActive = interactive.toLowerCase()=="True"?true:false;
    try {
-    const result = await axios.post(`https://${sphereId}.problems.sphere-engine.com/api/v4/problems/${id}?access_token=${sphereAPI}`,{
+    const result = await axios.post(`https://${sphereId}.problems.sphere-engine.com/api/v4/problems/:${id}?access_token=${sphereAPI}`,{
         headers:{
             "Content-Type":"application/json",
         },
@@ -112,40 +112,14 @@ module.exports.addTestCase = addTestCase;
 
 //submit a solution
 
-const submitSolution = async(req,res)=>{
-
-    const {problemId,source,compilerId,compilerVersionId,tests,files} = req.body
-    try {
-        const result = await awais.post(`https://${sphereId}.problems.sphere-engine.com/api/v4/submissions?access_token=${sphereAPI}`,{
-            headers:{
-                "Content-Type":"application/json",
-            },
-            body:{
-                    "problemId":parseInt(problemId),
-                    "source":source,
-                    "compilerId":parseInt(compilerId),
-                    "compilerVersionId":parseInt(compilerVersionId),
-                    "tests":tests,
-                    "files":[files]
-            }
-        })
-        const data = await result.json();
-        res.send(201).json({data});
-    } catch (error) {
-        res.send(500).json({message:"Something Went Wrong"});
-    }
-
-}
-
-module.exports.submitSolution = submitSolution;
 
 
 //check the solution on basis of submission id and return appropriate result
 
 const checkSolution = async(req,res)=>{
-
+    const id = req.params.id;
     try {
-        const result = await awais.get(`https://${sphereId}.problems.sphere-engine.com/api/v4/submissions/:id?access_token=${sphereAPI}`);
+        const result = await awais.get(`https://${sphereId}.problems.sphere-engine.com/api/v4/submissions/:${id}?access_token=${sphereAPI}`);
          const data = await result.json();
         res.send(200).json(data);
         
