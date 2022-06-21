@@ -1,6 +1,6 @@
 const { default: axios } = require("axios");
-// const dotenv = require("dotenv");
-// dotenv.config();
+const dotenv = require("dotenv");
+dotenv.config();
 const sphereId = process.env.SPHERE_ID;
 const sphereAPI = process.env.SPHERE_API;
 

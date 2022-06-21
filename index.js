@@ -1,4 +1,4 @@
-// const dotenv = require("dotenv");
+const dotenv = require("dotenv");
 const express = require("express");
 const cors = require("cors");
 const userRouter = require("./routes/user.js");
@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const app = express();
 const isAdmin = require("./middleware/auth.js");
 
-// dotenv.config();
+dotenv.config();
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
@@ -34,7 +34,3 @@ mongoose
 //setup routes
 app.use("/users", userRouter);
 app.use("/admin",isAdmin,problemRouter);
-
-//Fix Bug
-
-
