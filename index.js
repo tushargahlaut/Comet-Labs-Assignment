@@ -16,7 +16,7 @@ app.use(cors());
 
 // connect to MongoDB
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 80;
 
 
 mongoose
